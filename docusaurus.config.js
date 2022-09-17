@@ -32,7 +32,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/jefiozie/validate-validation/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/validointi/validointi/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -59,7 +59,7 @@ const config = {
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/jefiozie/validate-validation',
+            href: 'https://github.com/validointi/validointi',
             label: 'GitHub',
             position: 'right',
           },
