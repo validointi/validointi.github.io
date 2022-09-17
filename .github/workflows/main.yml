@@ -1,0 +1,17 @@
+name: Check if everything builds
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: google/wireit@setup-github-actions-caching/v1
+      - name: 👷 install
+        run: |
+          npm ci
+      - name: 🧪 build it
+        run: |
+          npm run build
