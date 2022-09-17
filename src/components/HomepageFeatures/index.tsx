@@ -12,7 +12,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Easy to Use",
     Svg: require("@site/static/img/undraw_check_boxes_re_v40f.svg").default,
-    description: <>Easly hockup Angular Forms with Vest, Joi and many more</>,
+    description: <>Easly hookup Angular Forms with Vest, Joi and many more</>,
   },
   {
     title: "Powered by Angular",
