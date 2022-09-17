@@ -14,4 +14,4 @@ jobs:
           npm ci
       - name: 🧪 build it
         run: |
-          npm run build
+          npm run build:docs
