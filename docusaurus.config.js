@@ -15,7 +15,7 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://raw.githubusercontent.com/validointi/validointi/main/assets/logo.ico',
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -48,7 +48,7 @@ const config = {
         title: 'Validointi',
         logo: {
           alt: 'Validointi Logo',
-          src: 'img/angular.svg',
+          src: 'https://raw.githubusercontent.com/validointi/validointi/main/assets/logo.svg',
         },
         items: [
           {
