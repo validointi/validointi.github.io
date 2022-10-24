@@ -23,7 +23,7 @@ npx ng generate c --standalone templateForm
 Open up the `template-form.component.html` and remove the HTML that is in there and replace it with the following.
 
 ```html
-<form>
+<form validationId="sample-data" (ngSubmit)="onSubmit($any(form))">
   <label for="name">
     <span>Your name</span>
   </label>
@@ -33,6 +33,7 @@ Open up the `template-form.component.html` and remove the HTML that is in there 
     placeholder="Fill in your name"
     [(ngModel)]="model.name"
   />
+  <input type="submit" value="Submit" [disabled]="form.invalid" />
 </form>
 ```
 
@@ -55,6 +56,10 @@ export class TemplateFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(data: any) {
+    console.error(data);
+  }
 }
 ```
 
