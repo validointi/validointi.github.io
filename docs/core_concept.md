@@ -29,3 +29,19 @@ When a form is getting **more** complex we need custom "validation", here it is 
 - [Vest](https://vestjs.dev)
 - [Joi](https://joi.dev)
 - [Ajv](https://ajv.js.org)
+
+
+## Adapters
+
+Adapters are simple functions that do some heavy lifting for you with one of the above mentioned validation libraries. A adapter can be used when registering the validation set.
+This will look something like
+
+```ts
+validate = this.#vr.registerValidator("sample-data", createSomeLibAdapter(suite));
+```
+
+:::caution
+
+At this moment we **ONLY** support a Vest Adapter `createVestAdapter`
+
+:::
