@@ -112,33 +112,36 @@ const suite = create((data = {}) => {
 });
 ```
 
-To use this `suite` we need to register it to the library. This will go into two steps.
+### Adapters
 
-Step one, make a generic function that is called by the library when validation is needed. This function has the purpose to call the model validation and map the errors to `Promise<ValidationErrors>`
+To use this `suite` we need to register it to the library. We can register our validation function to our validation registery by using a adapter.
+This adapter will do the heavy lifting for you to transform the test suite to a set of errors that we understand.
+Registering a adapter is easy, just inject the registry and call `registerValidator` where you put in a unique key and the adpater with the test suite.
 
-### Validation function
+```ts
+#vr = inject(ValidatorRegistryService);
+
+validate = this.#vr.registerValidator("sample-data", createVestAdapter(suite));
+```
+
+:::tip
+
+In case you are not using Vest you can use a custom function that can be registerd in the registry.
 
 ```ts
 async function validateSampleData(data: any): Promise<ValidationErrors> {
-  const errors = await suite(data).getErrors();
+  const errors = await customValidationsFunc(data).getErrors();
   return Object.entries(errors).reduce((acc, [key, err]) => {
     acc[key] = err;
     return acc;
   }, {} as ValidationErrors);
 }
 ```
+:::
 
-We can now safely register our validation function to our validation registery.
-The validation registry is a place where N validation functions live ready to validate a specific set of data.
-Registering a validation function is easy, just inject the registry and call `registerValidator` where you put in a unique key and the validation function.
 
-```ts
-#vr = inject(ValidatorRegistryService);
-
-validate = this.#vr.registerValidator("sample-data", validateSampleData);
-```
-
-Add the `ValidatorDirective` to the module/ standalone component.
+### Final touch
+Now that we have all things in place we just need to do one more step adding the `ValidatorDirective` to the module/ standalone component.
 
 ```ts
 ...
