@@ -42,6 +42,6 @@ validate = this.#vr.registerValidator("sample-data", createSomeLibAdapter(suite)
 
 :::caution
 
-At this moment we **ONLY** support a Vest Adapter `createVestAdapter`
+At this moment we **ONLY** support a Vest Adapter `createVestAdapter` and a Join Adapter `createJoiAdapter`
 
 :::
