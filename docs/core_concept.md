@@ -42,6 +42,11 @@ validate = this.#vr.registerValidator("sample-data", createSomeLibAdapter(suite)
 
 :::caution
 
-At this moment we **ONLY** support a Vest Adapter `createVestAdapter` and a Join Adapter `createJoiAdapter`
+At this moment we **ONLY** support a *Vest* Adapter [`createVestAdapter`][vest adapter] and a *Joi* Adapter [`createJoiAdapter`][joi adapter]
 
 :::
+
+
+
+[vest adapter]: https://github.com/validointi/validointi/blob/1c9a1897b741bd079a7c17bb8af058bcb3edcaf7/projects/validointi/core/src/lib/vestAdapter.ts#L7
+[joi adapter]: https://github.com/validointi/validointi/blob/1c9a1897b741bd079a7c17bb8af058bcb3edcaf7/projects/validointi/core/src/lib/joiAdapter.ts#L7
